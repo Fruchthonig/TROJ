@@ -1,0 +1,8 @@
+prefix=/home/tobias/catkin_ws/devel
+
+Name: sixpack
+Description: Description of sixpack
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/tobias/catkin_ws/devel/lib 
+Requires: 

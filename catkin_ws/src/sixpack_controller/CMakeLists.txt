@@ -1,0 +1,32 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(sixpack_controller)
+
+find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs  message_generation moveit_ros_planning_interface)
+
+## Declare ROS messages and services
+add_message_files(DIRECTORY msg FILES Servo.msg ServoArray.msg ServoConfig.msg ServoConfigArray.msg Position.msg PositionArray.msg)
+
+
+## Generate added messages and services
+generate_messages(DEPENDENCIES std_msgs)
+
+## Declare a catkin package
+catkin_package(CATKIN_DEPENDS roscpp std_msgs message_runtime)
+
+include_directories(include ${catkin_INCLUDE_DIRS})
+link_directories(${catkin_LIBRARY_DIRS})
+
+
+
+install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  PATTERN "setup_assistant.launch" EXCLUDE)
+install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(DIRECTORY scripts DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(DIRECTORY src DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(DIRECTORY msg DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+
+#add_executable troj_controller
+
+add_executable(troj_controller src/troj_controller.cpp)
+target_link_libraries(troj_controller ${catkin_LIBRARIES})
+add_dependencies(troj_controller i2cpwm_board_generate_messages_cpp)

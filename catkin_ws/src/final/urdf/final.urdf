@@ -1,0 +1,152 @@
+<robot
+  name="final">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0022921 0.03082 2.0021E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.12487" />
+      <inertia
+        ixx="0.00016623"
+        ixy="-2.8419E-06"
+        ixz="4.3114E-06"
+        iyy="0.00022999"
+        iyz="7.0582E-08"
+        izz="0.00016085" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="schulter">
+    <inertial>
+      <origin
+        xyz="-0.0031447 0.0091895 3.9312E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.06271" />
+      <inertia
+        ixx="6.8321E-05"
+        ixy="2.0548E-06"
+        ixz="4.8842E-08"
+        iyy="0.00011472"
+        iyz="-5.1134E-08"
+        izz="5.143E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final/meshes/schulter.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final/meshes/schulter.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sockel_rot"
+    type="continuous">
+    <origin
+      xyz="0 0 0.0546"
+      rpy="1.5708 -8.0214E-17 -1.6044" />
+    <parent
+      link="base_link" />
+    <child
+      link="schulter" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="oberarm">
+    <inertial>
+      <origin
+        xyz="-0.0335 -0.00097218 0.0001"
+        rpy="0 0 0" />
+      <mass
+        value="0.078007" />
+      <inertia
+        ixx="1.647E-05"
+        ixy="-2.9427E-14"
+        ixz="2.6776E-07"
+        iyy="6.0711E-05"
+        iyz="1.5679E-14"
+        izz="5.0891E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final/meshes/oberarm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final/meshes/oberarm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="schulter_turn"
+    type="continuous">
+    <origin
+      xyz="-0.022924 0.029878 0"
+      rpy="4.368E-15 -3.976E-15 -0.77732" />
+    <parent
+      link="schulter" />
+    <child
+      link="oberarm" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

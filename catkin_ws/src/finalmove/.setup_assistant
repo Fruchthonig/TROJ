@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: final
+    relative_path: urdf/final.urdf
+  SRDF:
+    relative_path: config/final.srdf
+  CONFIG:
+    author_name: fruithoney
+    author_email: fhy@fh.fh
+    generated_timestamp: 1503933942

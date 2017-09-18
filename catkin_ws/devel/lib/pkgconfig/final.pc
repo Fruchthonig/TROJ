@@ -1,0 +1,8 @@
+prefix=/home/tobias/catkin_ws/devel
+
+Name: final
+Description: Description of final
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/tobias/catkin_ws/devel/lib 
+Requires: 

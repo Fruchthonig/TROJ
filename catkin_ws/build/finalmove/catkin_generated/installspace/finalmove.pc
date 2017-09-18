@@ -1,0 +1,8 @@
+prefix=/home/tobias/catkin_ws/install
+
+Name: finalmove
+Description: Description of finalmove
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/tobias/catkin_ws/install/lib 
+Requires: 

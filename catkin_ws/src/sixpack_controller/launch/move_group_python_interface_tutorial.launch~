@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find sixpack_controller)/launch/demo.launch"/>
+
+  <node name="move_group_python_interface_tutorial" pkg="sixpack_controller" type="move_group_python_interface_tutorial.py" respawn="false" output="screen">
+  </node>
+
+</launch>

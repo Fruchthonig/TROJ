@@ -1,0 +1,155 @@
+<robot
+  name="sockelgruppe_01">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.038218303996781 -0.0992747660885872 0.0842558304813366"
+        rpy="0 0 0" />
+      <mass
+        value="0.123690512815826" />
+      <inertia
+        ixx="0.000163078852044066"
+        ixy="-4.07522933014811E-08"
+        ixz="7.55996552055098E-07"
+        iyy="0.000170103767285635"
+        iyz="7.46222554948337E-08"
+        izz="0.000233402535582312" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tobias/catkin_ws/src/sockelgruppe_01/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tobias/catkin_ws/src/sockelgruppe_01/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="sockel">
+    <inertial>
+      <origin
+        xyz="-0.00237103290057544 0.0091638200379547 0.00202785120377533"
+        rpy="0 0 0" />
+      <mass
+        value="0.0626317872475651" />
+      <inertia
+        ixx="6.1177459394481E-05"
+        ixy="1.53314943859846E-06"
+        ixz="-8.3262740458913E-06"
+        iyy="0.000114643688597606"
+        iyz="-1.31977205588604E-06"
+        izz="5.84323969843546E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tobias/catkin_ws/src/sockelgruppe_01/meshes/sockel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tobias/catkin_ws/src/sockelgruppe_01/meshes/sockel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base"
+    type="revolute">
+    <origin
+      xyz="-0.035371 -0.099296 0.1069"
+      rpy="1.5708 6.8938E-15 -2.9563" />
+    <parent
+      link="base_link" />
+    <child
+      link="sockel" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="schultergruppe">
+    <inertial>
+      <origin
+        xyz="-0.0335000000000001 -0.000972178664102291 0.000100000000005582"
+        rpy="0 0 0" />
+      <mass
+        value="0.0780070328804865" />
+      <inertia
+        ixx="1.6470116182529E-05"
+        ixy="-8.97854924089558E-20"
+        ixz="2.67756213331311E-07"
+        iyy="6.07113456402174E-05"
+        iyz="9.14795583034644E-20"
+        izz="5.08908468349093E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tobias/catkin_ws/src/sockelgruppe_01/meshes/schultergruppe.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tobias/catkin_ws/src/sockelgruppe_01/meshes/schultergruppe.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="schulter"
+    type="revolute">
+    <origin
+      xyz="-0.017468 0.029889 0.014846"
+      rpy="-0.28166 0.65469 -0.44361" />
+    <parent
+      link="sockel" />
+    <child
+      link="schultergruppe" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

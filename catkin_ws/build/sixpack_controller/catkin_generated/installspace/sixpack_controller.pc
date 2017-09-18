@@ -1,0 +1,8 @@
+prefix=/home/tobias/catkin_ws/install
+
+Name: sixpack_controller
+Description: Description of sixpack_controller
+Version: 0.3.0
+Cflags: -I/home/tobias/catkin_ws/install/include
+Libs: -L/home/tobias/catkin_ws/install/lib 
+Requires: roscpp std_msgs message_runtime

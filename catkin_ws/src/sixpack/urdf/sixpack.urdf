@@ -1,0 +1,308 @@
+<robot
+  name="sixpack">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00229210312133202 0.0308199185868277 2.00209042159186E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.124869268424245" />
+      <inertia
+        ixx="0.000166234501737584"
+        ixy="-2.84192605089271E-06"
+        ixz="4.31135946566176E-06"
+        iyy="0.00022999231141292"
+        iyz="7.05822052386472E-08"
+        izz="0.000160847922816684" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sixpack/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sixpack/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="schulter">
+    <inertial>
+      <origin
+        xyz="-0.0031447 0.0091895 3.9312E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.06271" />
+      <inertia
+        ixx="6.8321E-05"
+        ixy="2.0548E-06"
+        ixz="4.8842E-08"
+        iyy="0.00011472"
+        iyz="-5.1134E-08"
+        izz="5.143E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sixpack/meshes/schulter.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sixpack/meshes/schulter.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sockel_rot"
+    type="continuous">
+    <origin
+      xyz="0 0 0.0546"
+      rpy="1.5708 -8.0214E-17 -1.6044" />
+    <parent
+      link="base_link" />
+    <child
+      link="schulter" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="oberarm">
+    <inertial>
+      <origin
+        xyz="-0.0335000000003203 -0.000972178529096042 0.000100000000009392"
+        rpy="0 0 0" />
+      <mass
+        value="0.07800703939138" />
+      <inertia
+        ixx="1.64701178599122E-05"
+        ixy="-2.91759372127924E-14"
+        ixz="2.67759244414455E-07"
+        iyy="6.07113544093514E-05"
+        iyz="1.55447745883949E-14"
+        izz="5.08908543962999E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sixpack/meshes/oberarm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sixpack/meshes/oberarm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="schulter_turn"
+    type="continuous">
+    <origin
+      xyz="-0.022924 0.029878 0"
+      rpy="4.2015E-15 -4.1356E-15 -0.76967" />
+    <parent
+      link="schulter" />
+    <child
+      link="oberarm" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="ellbogen">
+    <inertial>
+      <origin
+        xyz="-0.0315728910168477 0.0299553498472602 -0.0048996102772783"
+        rpy="0 0 0" />
+      <mass
+        value="0.056055922130098" />
+      <inertia
+        ixx="2.46748102969753E-05"
+        ixy="4.20034287217436E-06"
+        ixz="-7.56873647155022E-07"
+        iyy="3.15633414638931E-05"
+        iyz="1.3212260877232E-06"
+        izz="2.02141864149201E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sixpack/meshes/ellbogen.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sixpack/meshes/ellbogen.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="oberarm_turn"
+    type="continuous">
+    <origin
+      xyz="-0.067 0 0"
+      rpy="-1.5959E-16 1.9082E-16 2.0622" />
+    <parent
+      link="oberarm" />
+    <child
+      link="ellbogen" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="unterarm">
+    <inertial>
+      <origin
+        xyz="-0.0004665143594513 -0.00090976482948979 -0.0343085356985312"
+        rpy="0 0 0" />
+      <mass
+        value="0.0177110739218864" />
+      <inertia
+        ixx="3.31015948673458E-06"
+        ixy="-1.87376525109976E-08"
+        ixz="-6.73693973315115E-08"
+        iyy="4.44605749549143E-06"
+        iyz="-4.77996778338839E-08"
+        izz="2.131822525471E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sixpack/meshes/unterarm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sixpack/meshes/unterarm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ellbogen_rot"
+    type="continuous">
+    <origin
+      xyz="-0.045184 0.034999 0.0002"
+      rpy="1.5708 -1.3573 1.5708" />
+    <parent
+      link="ellbogen" />
+    <child
+      link="unterarm" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="hand">
+    <inertial>
+      <origin
+        xyz="-0.00178396235206525 5.03307839287703E-07 0.0272101669416818"
+        rpy="0 0 0" />
+      <mass
+        value="0.0217073358618255" />
+      <inertia
+        ixx="5.41977060598447E-06"
+        ixy="-8.33233614578853E-12"
+        ixz="1.47736387595121E-07"
+        iyy="1.03187308323944E-05"
+        iyz="1.20251567397395E-11"
+        izz="6.0636714378395E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sixpack/meshes/hand.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sixpack/meshes/hand.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="unterarm_turn"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.043333"
+      rpy="-1.7046 -1.7902E-15 -6.3838E-16" />
+    <parent
+      link="unterarm" />
+    <child
+      link="hand" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+</robot>

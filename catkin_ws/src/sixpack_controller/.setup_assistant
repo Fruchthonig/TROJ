@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: sixpack
+    relative_path: urdf/sixpack.urdf
+  SRDF:
+    relative_path: config/sixpack.srdf
+  CONFIG:
+    author_name: fruithoey
+    author_email: fh@fh.de
+    generated_timestamp: 1503940106

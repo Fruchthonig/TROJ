@@ -1,0 +1,2 @@
+set(troj_controller_MESSAGE_FILES "/home/tobias/catkin_ws/src/troj_controller/msg/Servo.msg;/home/tobias/catkin_ws/src/troj_controller/msg/ServoArray.msg;/home/tobias/catkin_ws/src/troj_controller/msg/ServoConfig.msg;/home/tobias/catkin_ws/src/troj_controller/msg/ServoConfigArray.msg;/home/tobias/catkin_ws/src/troj_controller/msg/Position.msg;/home/tobias/catkin_ws/src/troj_controller/msg/PositionArray.msg")
+set(troj_controller_SERVICE_FILES "")

@@ -1,0 +1,2 @@
+set(sixpack_controller_MESSAGE_FILES "/home/tobias/catkin_ws/src/sixpack_controller/msg/Servo.msg;/home/tobias/catkin_ws/src/sixpack_controller/msg/ServoArray.msg;/home/tobias/catkin_ws/src/sixpack_controller/msg/ServoConfig.msg;/home/tobias/catkin_ws/src/sixpack_controller/msg/ServoConfigArray.msg;/home/tobias/catkin_ws/src/sixpack_controller/msg/Position.msg;/home/tobias/catkin_ws/src/sixpack_controller/msg/PositionArray.msg")
+set(sixpack_controller_SERVICE_FILES "")

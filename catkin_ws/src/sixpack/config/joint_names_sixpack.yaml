@@ -1,0 +1,1 @@
+controller_joint_names: ['sockel_rot', 'schulter_turn', 'oberarm_turn', 'ellbogen_rot', 'unterarm_turn', ]

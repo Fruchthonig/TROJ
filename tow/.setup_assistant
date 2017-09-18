@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: sockelgruppe_01
+    relative_path: urdf/sockelgruppe_01.urdf
+  SRDF:
+    relative_path: config/sockelgruppe_01.srdf
+  CONFIG:
+    author_name: fruithoney
+    author_email: fh@web.de
+    generated_timestamp: 1503918791
